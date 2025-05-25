@@ -14,4 +14,4 @@ Enjoy
 
 
 Web Installer: 
-![alt text]([https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png](https://github.com/MP3DPT/BambuLight-FW-Installer/blob/main/06.jpg) "Web Installer")
+![alt text](https://github.com/MP3DPT/BambuLight-FW-Installer/blob/main/06.jpg "Web installer")
