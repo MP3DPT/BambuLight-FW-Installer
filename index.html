@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32-C3 Project Installer</title>
+    <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #ff9a56 0%, #ff6b35 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo-section {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .logo {
+            max-width: 200px;
+            max-height: 80px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+        }
+        
+        .info-box {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .install-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        esp-web-install-button {
+            --esp-tools-button-color: #ffffff;
+            --esp-tools-button-text-color: #ffffff;
+            margin: 20px 0;
+        }
+        
+        esp-web-install-button[install] {
+            --esp-tools-button-color: #28a745;
+        }
+        
+        .steps {
+            text-align: left;
+            margin: 30px 0;
+        }
+        
+        .step {
+            margin: 15px 0;
+            padding: 15px;
+            background: #e9ecef;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+        
+        .step-number {
+            font-weight: bold;
+            color: #28a745;
+        }
+        
+        .requirements {
+            background: #e7f3ff;
+            border: 1px solid #b8daff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+        
+        .status {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .status.success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        
+        .status.error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-section">
+            <img src="logo.png" alt="Your Logo" class="logo">
+        </div>
+        
+        <h1>🚀 BambuLight Firmware Installer</h1>
+        <p class="subtitle">Flash your ESP32-C3 Super Mini directly from your browser</p>
+        
+        <div class="requirements">
+            <h3>📋 Requirements</h3>
+            <ul>
+                <li><strong>Board:</strong> ESP32-C3 Super Mini</li>
+                <li><strong>Browser:</strong> Chrome, Edge, or Opera (WebSerial support required)</li>
+                <li><strong>USB Cable:</strong> Data-capable USB-C cable</li>
+                <li><strong>Drivers:</strong> CH340 or CP2102 drivers (usually auto-installed)</li>
+				<li><strong>You can download the drivere here:</strong> https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers/all</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h3>🔧 Before You Start</h3>
+            <p>Make sure your ESP32-C3 Super Mini is connected to your computer via USB. The board should appear as a serial port in your system.</p>
+        </div>
+        
+        <div class="install-section">
+            <h3>Install Firmware</h3>
+            <p>Click the button below to install the firmware on your ESP32-C3 board:</p>
+            
+            <esp-web-install-button manifest="./manifest.json">
+                <button slot="activate">Connect & Install</button>
+                <span slot="unsupported">
+                    ❌ Your browser doesn't support WebSerial. Please use Chrome, Edge, or Opera.
+                </span>
+                <span slot="not-allowed">
+                    ❌ Serial port access not allowed. Please check your browser permissions.
+                </span>
+            </esp-web-install-button>
+            
+            <div id="status" class="status"></div>
+        </div>
+        
+        <div class="steps">
+            <h3>📝 Installation Steps</h3>
+            <div class="step">
+                <span class="step-number">1.</span> Connect your ESP32-C3 Super Mini to your computer
+            </div>
+            <div class="step">
+                <span class="step-number">2.</span> Click "Connect & Install" button above
+            </div>
+            <div class="step">
+                <span class="step-number">3.</span> Select your ESP32-C3 port from the list
+            </div>
+            <div class="step">
+                <span class="step-number">4.</span> Click "Install" and wait for completion
+            </div>
+            <div class="step">
+                <span class="step-number">5.</span> Your board will do a soft restart automatically with the new firmware
+            </div>
+            <div class="step">
+                <span class="step-number">6.</span> You must do a board power cycle to ensure the PIR reset, and all works as expected
+            </div>
+        </div>
+        
+        <div class="warning-box">
+            <h3>⚠️ Troubleshooting</h3>
+            <ul>
+                <li><strong>Port not found:</strong> Check USB cable and drivers</li>
+                <li><strong>Flash failed:</strong> Try holding BOOT button while connecting</li>
+                <li><strong>Permission denied:</strong> Close Arduino IDE or other serial programs</li>
+                <li><strong>Browser not supported:</strong> Use Chrome, Edge, or Opera</li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <p>Powered by MP3D | Made with ❤️ for the maker community</p>
+			<p>Contact: mp3dpt@gmail.com</p>
+			<p>If you want to buy me a coffee: paypal.me/mmpires</p>			
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const installButton = document.querySelector('esp-web-install-button');
+            const status = document.getElementById('status');
+            
+            installButton.addEventListener('state-changed', (ev) => {
+                const state = ev.detail.state;
+                status.style.display = 'block';
+                
+                switch(state) {
+                    case 'PREPARING':
+                        status.className = 'status';
+                        status.textContent = '🔄 Preparing installation...';
+                        break;
+                    case 'MANIFEST':
+                        status.className = 'status';
+                        status.textContent = '📄 Loading firmware manifest...';
+                        break;
+                    case 'INSTALLING':
+                        status.className = 'status';
+                        status.textContent = '⚡ Installing firmware... Please wait.';
+                        break;
+                    case 'FINISHED':
+                        status.className = 'status success';
+                        status.textContent = '✅ Installation completed successfully!';
+                        break;
+                    case 'ERROR':
+                        status.className = 'status error';
+                        status.textContent = '❌ Installation failed. Check troubleshooting guide above.';
+                        break;
+                    default:
+                        status.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
