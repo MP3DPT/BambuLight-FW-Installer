@@ -4,8 +4,8 @@ This is Firmware Installer for Mp3D BambuLight project
 You can access the installer directly by this link:
 https://mp3dpt.github.io/BambuLight-FW-Installer/
 
-You need to have install on your computer CH340 driver before you try to upload to your esp32 C3 SuperMini board.
-Check this link for instroction on how to install the driver:
+You need to have installed on your computer CH340 driver before you try to upload to your esp32 C3 SuperMini board.
+Check this link for instruction on how to install the driver:
 https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers/all
 
 Enjoy
