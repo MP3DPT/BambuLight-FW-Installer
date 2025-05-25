@@ -8,4 +8,6 @@ You need to have installed on your computer CH340 driver before you try to uploa
 Check this link for instruction on how to install the driver:
 https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers/all
 
+The purpose of this project is to be able to control the light without interfering with anything on the printer, so we will not violate any rules set by BambuLab.
+
 Enjoy
