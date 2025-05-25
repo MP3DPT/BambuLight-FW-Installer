@@ -11,3 +11,7 @@ https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers/all
 The purpose of this project is to be able to control the light without interfering with anything on the printer, so we will not violate any rules set by BambuLab.
 
 Enjoy
+
+
+Web Installer: 
+![alt text]([https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png](https://github.com/MP3DPT/BambuLight-FW-Installer/blob/main/06.jpg) "Web Installer")
